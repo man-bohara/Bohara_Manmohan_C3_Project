@@ -74,7 +74,7 @@ class RestaurantTest {
         List<String> menuNames = new ArrayList<>();
         menuNames.add("Sweet corn soup");
         int order_price = restaurant.getOrderPrice(menuNames);
-        assertEquals(199, order_price);
+        assertEquals(119, order_price);
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
