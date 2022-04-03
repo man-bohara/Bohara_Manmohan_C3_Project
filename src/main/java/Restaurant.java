@@ -63,4 +63,8 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+
+    public int getOrderPrice(List<String> menuNames) {
+        return 0;
+    }
 }
