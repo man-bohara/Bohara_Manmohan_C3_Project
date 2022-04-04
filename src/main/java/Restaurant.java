@@ -1,7 +1,9 @@
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Restaurant {
     private String name;
@@ -64,7 +66,25 @@ public class Restaurant {
         return name;
     }
 
+    /*
+    This method was added as part of implementation the missing feature.
+    Requirements:
+    1. This method should receive list of menu names as String as parameters.
+    2. It should check the price for each item and add them all to calculate final cost.
+    3. Returns the total cost of selecting the menus, and it will be the total order price.
+    */
     public int getOrderPrice(List<String> menuNames) {
-        return 0;
+        int price = 0;
+        Map<String, Integer> nameToPriceMap = new HashMap<>();
+        for(Item m : menu) {
+            nameToPriceMap.put(m.getName(), m.getPrice());
+        }
+
+        for(String name : menuNames) {
+            if(nameToPriceMap.containsKey(name)) {
+                price += nameToPriceMap.get(name);
+            }
+        }
+        return price;
     }
 }
